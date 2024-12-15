@@ -1,4 +1,5 @@
 import sys  
+from logger import logging
 #It will provide various function and variables that are used to manipulate different parts of python runtime environment
 #Basically it gives access to the system as well as variable related information
 # sys.version -> Python Version  sys.argv -> List of arguments passed to the particular script
@@ -21,11 +22,11 @@ class CustomException(Exception):
         return self.error_message
 
 
-# import logging
-# if __name__ == '__main__':
-#     try:
-#         a=1/0
-#     except Exception as e:
+
+if __name__ == '__main__':
+    try:
+        a=1/0
+    except Exception as e:
         
-#         logging.info('Exception')
-#         raise CustomException(e,sys)
+        logging.info('Exception')
+        raise CustomException(e,sys)

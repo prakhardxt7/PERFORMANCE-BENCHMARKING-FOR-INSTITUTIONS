@@ -4,4 +4,7 @@ seaborn
 matplotlib
 streamlit
 mlflow
--e .
+scikit-learn
+catboost
+xgboost
+#-e .
