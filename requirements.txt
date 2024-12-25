@@ -1,0 +1,9 @@
+pandas
+numpy
+seaborn
+-e .
+#we can use setup.py in 2 ways 
+# 1 by running the file directly 
+# 2 when we use pip install -r req.txt then also we can run the same.
+# -e . will automatically trigger the setup.py 
+# But running from setup.py file this -e . will also be read this needs to be resolved.
