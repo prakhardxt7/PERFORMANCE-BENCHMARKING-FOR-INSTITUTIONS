@@ -20,4 +20,16 @@ src - Package(main Package)
     - Exception
         sys library
             in sys exc_info() will tell on which line the exception has occurred clearly.
-        
+
+
+GCV Details:
+Args:
+    - model: The machine learning model (e.g., RandomForestRegressor()).
+    - param_grid: Dictionary of hyperparameters to tune.
+    - X_train: Features for training.
+    - y_train: Target variable for training.
+    - cv: Number of cross-validation folds (default=5).
+    - n_jobs: Number of jobs to run in parallel (-1 uses all available CPUs).
+    - verbose: Level of verbosity during GridSearchCV (default=1).
+    - refit: Whether to refit the best model on the entire dataset (default=True).
+

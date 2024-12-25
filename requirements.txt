@@ -1,6 +1,13 @@
 pandas
 numpy
 seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
+Flask
+#python=3.9
+
 -e .
 #we can use setup.py in 2 ways 
 # 1 by running the file directly 
