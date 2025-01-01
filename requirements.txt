@@ -3,12 +3,13 @@ numpy
 seaborn
 matplotlib
 scikit-learn
+#-e .
 catboost
 xgboost
 Flask
 #python=3.9
 
--e .
+
 #we can use setup.py in 2 ways 
 # 1 by running the file directly 
 # 2 when we use pip install -r req.txt then also we can run the same.
