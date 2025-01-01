@@ -1,0 +1,9 @@
+{
+  "gender": "female",
+  "race_ethnicity": "group B",
+  "parental_level_of_education": "some college",
+  "lunch": "standard",
+  "test_preparation_course": "completed",
+  "reading_score": 72,
+  "writing_score": 74
+}
