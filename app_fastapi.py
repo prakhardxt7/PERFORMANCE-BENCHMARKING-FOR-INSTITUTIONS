@@ -23,7 +23,7 @@ def index():
 @app.post('/predict')
 def predict_student_performance(input_data: CustomDataInput):
     try:
-        # Convert input to DataFrame
+        # Converting all inputs in a dataframe
         custom_data = CustomData(
             gender=input_data.gender,
             race_ethnicity=input_data.race_ethnicity,
@@ -34,13 +34,13 @@ def predict_student_performance(input_data: CustomDataInput):
             writing_score=input_data.writing_score
         )
 
-        # Prepare the data for prediction
+        # dataframe
         input_df = custom_data.get_data_as_data_frame()
 
         # Initialize the prediction pipeline
         predict_pipeline = PredictPipeline()
 
-        # Predict using the pipeline
+        # Prediction using the pipeline
         prediction = predict_pipeline.predict(input_df)
 
         return {'Final_Score': prediction.tolist()}
