@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/511495203236983798/42dd5d6ace504d1d90266c8f9cdd0de4/artifacts
+end_time: 1735759665461
+entry_point_name: ''
+experiment_id: '511495203236983798'
+lifecycle_stage: active
+run_id: 42dd5d6ace504d1d90266c8f9cdd0de4
+run_name: Decision Tree_20250102_005745
+run_uuid: 42dd5d6ace504d1d90266c8f9cdd0de4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735759665375
+status: 3
+tags: []
+user_id: prakhar

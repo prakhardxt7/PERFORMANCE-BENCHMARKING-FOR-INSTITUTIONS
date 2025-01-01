@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/511495203236983798/caf3923529f6471e814b7400498db53d/artifacts
+deleted_time: 1735759322404
+end_time: 1735759083596
+entry_point_name: ''
+experiment_id: '511495203236983798'
+lifecycle_stage: deleted
+run_id: caf3923529f6471e814b7400498db53d
+run_name: grandiose-worm-450
+run_uuid: caf3923529f6471e814b7400498db53d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735759048340
+status: 3
+tags: []
+user_id: prakhar

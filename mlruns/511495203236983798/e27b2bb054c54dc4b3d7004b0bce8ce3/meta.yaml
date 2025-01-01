@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/511495203236983798/e27b2bb054c54dc4b3d7004b0bce8ce3/artifacts
+deleted_time: 1735759460226
+end_time: 1735759274780
+entry_point_name: ''
+experiment_id: '511495203236983798'
+lifecycle_stage: deleted
+run_id: e27b2bb054c54dc4b3d7004b0bce8ce3
+run_name: AdaBoost Regressor_20250102_005114
+run_uuid: e27b2bb054c54dc4b3d7004b0bce8ce3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735759274711
+status: 3
+tags: []
+user_id: prakhar
