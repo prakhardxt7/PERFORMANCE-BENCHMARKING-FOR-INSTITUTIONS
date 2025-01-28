@@ -1,0 +1,3 @@
+gender,race_ethnicity,parental_level_of_education,lunch,test_preparation_course,reading_score,writing_score,predicted_label
+male,group B,high school,free/reduced,completed,48.0,89.0,79.22
+female,group A,bachelor's degree,standard,none,88.0,66.0,63.73

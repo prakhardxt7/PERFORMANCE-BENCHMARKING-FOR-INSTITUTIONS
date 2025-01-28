@@ -9,6 +9,7 @@ xgboost
 Flask
 mlflow
 fastapi
+uvicorn
 #python=3.9
 
 
