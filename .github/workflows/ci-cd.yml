@@ -1,0 +1,52 @@
+name: Deploy to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      AZURE_WEBAPP_NAME: ${{ secrets.WEBAPP_NAME }}
+      AZURE_PLAN: ${{ secrets.AZURE_PLAN }}
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      ACR_NAME: ${{ secrets.ACR_NAME }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log in to Azure using Service Principal
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Log in to Azure Container Registry (ACR)
+      run: |
+        az acr login --name $ACR_NAME
+
+    - name: Build and tag Docker image
+      run: |
+        docker build -t $ACR_NAME.azurecr.io/fastapi-app:latest .
+
+    - name: Push Docker image to ACR
+      run: |
+        docker push $ACR_NAME.azurecr.io/fastapi-app:latest
+
+    - name: Create or update Azure Web App with the ACR image
+      run: |
+        az webapp create --name $AZURE_WEBAPP_NAME \
+                         --resource-group $AZURE_RESOURCE_GROUP \
+                         --plan $AZURE_PLAN \
+                         --deployment-container-image-name $ACR_NAME.azurecr.io/fastapi-app:latest || \
+        az webapp config container set --name $AZURE_WEBAPP_NAME \
+                                       --resource-group $AZURE_RESOURCE_GROUP \
+                                       --docker-custom-image-name $ACR_NAME.azurecr.io/fastapi-app:latest \
+                                       --docker-registry-server-url https://$ACR_NAME.azurecr.io
+
+    - name: Restart Azure Web App
+      run: |
+        az webapp restart --name $AZURE_WEBAPP_NAME --resource-group $AZURE_RESOURCE_GROUP
