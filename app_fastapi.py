@@ -9,12 +9,12 @@ app = FastAPI()
 # Input model for prediction
 class CustomDataInput(BaseModel):
     gender: str
-    race_ethnicity: str
-    parental_level_of_education: str
-    lunch: str
-    test_preparation_course: str
-    reading_score: int
-    writing_score: int
+    group: str
+    highest_qualification: str
+    scholarship_eligibility: str
+    standardized_test_preparation: str
+    higher_education_performance: int
+    high_school_performance: int
 
 @app.get('/')
 def index():
@@ -26,15 +26,15 @@ def predict_student_performance(input_data: CustomDataInput):
         # Converting all inputs in a dataframe
         custom_data = CustomData(
             gender=input_data.gender,
-            race_ethnicity=input_data.race_ethnicity,
-            parental_level_of_education=input_data.parental_level_of_education,
-            lunch=input_data.lunch,
-            test_preparation_course=input_data.test_preparation_course,
-            reading_score=input_data.reading_score,
-            writing_score=input_data.writing_score
+            group=input_data.group,
+            highest_qualification=input_data.highest_qualification,
+            scholarship_eligibility=input_data.scholarship_eligibility,
+            standardized_test_preparation=input_data.standardized_test_preparation,
+            higher_education_performance=input_data.higher_education_performance,
+            high_school_performance=input_data.high_school_performance
         )
 
-        # dataframe
+        # Convert to DataFrame
         input_df = custom_data.get_data_as_data_frame()
 
         # Initialize the prediction pipeline

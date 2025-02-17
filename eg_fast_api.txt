@@ -1,9 +1,9 @@
 {
   "gender": "female",
-  "race_ethnicity": "group B",
-  "parental_level_of_education": "some college",
-  "lunch": "standard",
-  "test_preparation_course": "completed",
-  "reading_score": 72,
-  "writing_score": 74
+  "group": "group B",
+  "highest_qualification": "some college",
+  "scholarship_eligibility": "standard",
+  "standardized_test_preparation": "completed",
+  "higher_education_performance": 72,
+  "high_school_performance": 74
 }

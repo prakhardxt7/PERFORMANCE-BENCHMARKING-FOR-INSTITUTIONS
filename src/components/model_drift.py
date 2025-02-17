@@ -14,7 +14,7 @@ class ModelDrift:
         self.drift_threshold = drift_threshold
 
     def check_drift(self, train_data, new_data):
-        column_name = "writing_score"  # Static column for drift detection
+        column_name = "high_school_performance"  
         try:
             # Check if the column is numeric
             if not pd.api.types.is_numeric_dtype(train_data[column_name]):

@@ -47,9 +47,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ethnicity">Race or Ethnicity</label>
-                    <select class="form-control" name="race_ethnicity" id="ethnicity" required>
-                        <option value="" disabled selected>Select Ethnicity</option>
+                    <label for="group">Group</label>
+                    <select class="form-control" name="group" id="group" required>
+                        <option value="" disabled selected>Select Group</option>
                         <option value="group A">Group A</option>
                         <option value="group B">Group B</option>
                         <option value="group C">Group C</option>
@@ -58,46 +58,44 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="education">Parental Level of Education</label>
-                    <select class="form-control" name="parental_level_of_education" id="education" required>
-                        <option value="" disabled selected>Select Parent Education</option>
-                        <option value="associate's degree">Associate's degree</option>
-                        <option value="bachelor's degree">Bachelor's degree</option>
+                    <label for="highest_qualification">Highest Qualification</label>
+                    <select class="form-control" name="highest_qualification" id="highest_qualification" required>
+                        <option value="" disabled selected>Select Qualification</option>
                         <option value="high school">High School</option>
-                        <option value="master's degree">Master's degree</option>
-                        <option value="some college">Some College</option>
-                        <option value="some high school">Some High School</option>
+                        <option value="bachelor's degree">Bachelor's Degree</option>
+                        <option value="master's degree">Master's Degree</option>
+                        <option value="phd">PhD</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="lunch">Lunch Type</label>
-                    <select class="form-control" name="lunch" id="lunch" required>
-                        <option value="" disabled selected>Select Lunch Type</option>
-                        <option value="free/reduced">Free/Reduced</option>
-                        <option value="standard">Standard</option>
+                    <label for="scholarship_eligibility">Scholarship Eligibility</label>
+                    <select class="form-control" name="scholarship_eligibility" id="scholarship_eligibility" required>
+                        <option value="" disabled selected>Select Eligibility</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="course">Test Preparation Course</label>
-                    <select class="form-control" name="test_preparation_course" id="course" required>
-                        <option value="" disabled selected>Select Test Course</option>
+                    <label for="standardized_test_preparation">Standardized Test Preparation</label>
+                    <select class="form-control" name="standardized_test_preparation" id="standardized_test_preparation" required>
+                        <option value="" disabled selected>Select Preparation Level</option>
                         <option value="none">None</option>
                         <option value="completed">Completed</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="reading_score">Reading Score (out of 100)</label>
-                    <input type="number" class="form-control" name="reading_score" id="reading_score" placeholder="Enter Reading Score" min="0" max="100" required>
+                    <label for="higher_education_performance">Higher Education Performance</label>
+                    <input type="number" class="form-control" name="higher_education_performance" id="higher_education_performance" placeholder="Enter Performance Score" min="0" max="100" required>
                 </div>
                 <div class="form-group">
-                    <label for="writing_score">Writing Score (out of 100)</label>
-                    <input type="number" class="form-control" name="writing_score" id="writing_score" placeholder="Enter Writing Score" min="0" max="100" required>
+                    <label for="high_school_performance">High School Performance</label>
+                    <input type="number" class="form-control" name="high_school_performance" id="high_school_performance" placeholder="Enter Performance Score" min="0" max="100" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Predict Your Math Score</button>
+                <button type="submit" class="btn btn-primary">Predict Performance</button>
             </fieldset>
         </form>
         {% if result %}
-            <h2>Predicted Math Score: {{ result }}</h2>
+            <h2>Predicted Final Score: {{ result }}</h2>
         {% endif %}
     </div>
 </body>

@@ -24,19 +24,19 @@ class PredictPipeline:
 class CustomData:  #it is responsible in mapping all the input data we give in html/or user input we can say
     def __init__(self,
                  gender: str,
-                 race_ethnicity: str,
-                 parental_level_of_education,
-                 lunch:str,
-                 test_preparation_course:str,
-                 reading_score:int,
-                 writing_score: int):
+                 group: str,
+                 highest_qualification:str,
+                 scholarship_eligibility:str,
+                 standardized_test_preparation:str,
+                 higher_education_performance:int,
+                 high_school_performance: int):
         self.gender = gender
-        self.race_ethnicity = race_ethnicity
-        self.parental_level_of_education=parental_level_of_education
-        self.lunch=lunch
-        self.test_preparation_course=test_preparation_course
-        self.reading_score=reading_score
-        self.writing_score=writing_score
+        self.group = group
+        self.highest_qualification=highest_qualification
+        self.scholarship_eligibility=scholarship_eligibility
+        self.standardized_test_preparation=standardized_test_preparation
+        self.higher_education_performance=higher_education_performance
+        self.high_school_performance=high_school_performance
         #These values are basically coming from the web application,
         # we can check from home.html same variables and its components used or mapped(eg Gender is there and values are mapped is male and female)
     
@@ -44,12 +44,12 @@ class CustomData:  #it is responsible in mapping all the input data we give in h
         try:
             custom_data_input_dict={
                 'gender':[self.gender],
-                "race_ethnicity":[self.race_ethnicity],
-                'parental_level_of_education':[self.parental_level_of_education],
-                'lunch':[self.lunch],
-                'test_preparation_course':[self.test_preparation_course],
-                'reading_score':[self.reading_score],
-                'writing_score':[self.writing_score]
+                "group":[self.group],
+                'highest_qualification':[self.highest_qualification],
+                'scholarship_eligibility':[self.scholarship_eligibility],
+                'standardized_test_preparation':[self.standardized_test_preparation],
+                'higher_education_performance':[self.higher_education_performance],
+                'high_school_performance':[self.high_school_performance]
             }
             return pd.DataFrame(custom_data_input_dict)
         except Exception as e:
