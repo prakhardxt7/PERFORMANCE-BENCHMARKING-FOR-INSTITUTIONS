@@ -42,13 +42,14 @@ def predict_datapoint():
         try:
             # Gather inputs from the user
             data = CustomData(
-                gender=request.form.get('gender'),
-                race_ethnicity=request.form.get('race_ethnicity'),
-                parental_level_of_education=request.form.get('parental_level_of_education'),
-                lunch=request.form.get('lunch'),
-                test_preparation_course=request.form.get('test_preparation_course'),
-                reading_score=float(request.form.get('reading_score')),
-                writing_score=float(request.form.get('writing_score'))
+                applicant_gender=request.form.get('applicant_gender'),
+                academic_background=request.form.get('academic_background'),  # High school type, GPA, major interests
+                highest_qualification=request.form.get('highest_qualification'),  # Last completed education level
+                scholarship_eligibility=request.form.get('scholarship_eligibility'),  # Merit or financial-based scholarships
+                standardized_test_preparation=request.form.get('standardized_test_preparation'),  # SAT, ACT, GRE, GMAT prep status
+                critical_reading_score=float(request.form.get('critical_reading_score')),  # Reading test assessment
+                academic_writing_score=float(request.form.get('academic_writing_score')),  # Essay/writing assessment
+                mathematical_reasoning_score=float(request.form.get('mathematical_reasoning_score'))  # Math section score
             )
 
             # Convert the custom data to a DataFrame
@@ -63,14 +64,15 @@ def predict_datapoint():
 
             # Prepare the data dictionary for saving
             input_data_with_prediction = {
-                'gender': request.form.get('gender'),
-                'race_ethnicity': request.form.get('race_ethnicity'),
-                'parental_level_of_education': request.form.get('parental_level_of_education'),
-                'lunch': request.form.get('lunch'),
-                'test_preparation_course': request.form.get('test_preparation_course'),
-                'reading_score': float(request.form.get('reading_score')),
-                'writing_score': float(request.form.get('writing_score')),
-                'predicted_label': round(results[0], 2)
+                'applicant_gender': request.form.get('applicant_gender'),
+                'academic_background': request.form.get('academic_background'),
+                'highest_qualification': request.form.get('highest_qualification'),
+                'scholarship_eligibility': request.form.get('scholarship_eligibility'),
+                'standardized_test_preparation': request.form.get('standardized_test_preparation'),
+                'critical_reading_score': float(request.form.get('critical_reading_score')),
+                'academic_writing_score': float(request.form.get('academic_writing_score')),
+                'mathematical_reasoning_score': float(request.form.get('mathematical_reasoning_score')),
+                'predicted_academic_success': round(results[0], 2)  # Expected college performance based on inputs
             }
 
             # Save the input data and prediction to the CSV file
@@ -78,6 +80,7 @@ def predict_datapoint():
 
             # Return the prediction result to the HTML template
             return render_template('home.html', result=round(results[0], 2))
+
         except Exception as e:
             print(f"Error occurred: {e}")  # Debugging: Print the error in the console
             return render_template('home.html', result="Error during prediction. Check the inputs!")
